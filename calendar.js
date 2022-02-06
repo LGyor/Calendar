@@ -1,4 +1,22 @@
 
+/********************* HAMBURGER MENU ******************** */
+let hamburger = document.getElementsByClassName("hamburger");
+
+ 
+hamburger[0].addEventListener("click", () =>{
+	/*alert("Hamburger");*/
+ if (document.getElementsByTagName("nav")[0].style.left === "0px"){
+	 
+	 document.getElementsByTagName("nav")[0].style.left = "-40%";	
+	 hamburger[0].classList.toggle("close");
+ }else{
+	 document.getElementsByTagName("nav")[0].style.left = "0px";
+     hamburger[0].classList.toggle("close");	 
+ }	
+	
+});
+
+/********************* CALENDAR ******************** */
 let monthsOfName = ["Január", "Február", "Március", "Április", "Május", "Június", "Július",
  "Augusztus", "Szeptember", "Október", "November", "December"];
  

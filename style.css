@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
 *{
   box-sizing: border-box;
   margin: 0;
@@ -5,14 +6,83 @@
 }
 
 html{
+  font-family: 'Roboto Slab', serif;	
   font-size: 16px;	
   color: #FC600A;
+  scroll-behavior: smooth; 
 }
 body{
   background-color: lightblue;	
 
 }  
+/* ********************* HEADER ********************* */
+header{
+ max-width: 1100px;	
+ height: 100vh;
+ margin: 0 auto;
+ /*background-color: gold;*/ 
+ background-image: url(bg_moon_flower_1280.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center center;
+ object-fit: cover; 
+}
 
+.hamburger{
+  display: none;	
+  position: absolute;
+  right: 8%;
+  top: 2%; 
+  padding: 4px;  
+  background-color: rgba(4, 17, 22, .2);  
+  border-radius: 4px;  
+}
+.hamburger_line{
+  width: 20px;
+  height: 4px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background-color: #F7E0D4;  
+	
+}
+
+header nav{
+  display: flex;	
+  justify-content: center;
+  font-size: .66rem;
+  /*background-color: #092834;	*/
+  background-color: rgba(4, 17, 22, .2);
+}
+header nav a{
+  position: relative;  	
+  margin: 0 2%;	
+  padding: .6rem .2%;
+  letter-spacing: 2px;
+  font-weight: 400;  
+  text-decoration: none;
+  color: #F7E0D4; 
+}
+
+header nav a::before {
+  content: "";
+  position: absolute;
+  bottom: 0.2rem;
+  left: 50%;
+  width: 0;
+  height: .15rem;
+  background-color: #F7E0D4;
+  opacity: .1;
+  transition: .6s ;   
+}
+
+header nav a:hover::before {
+  opacity: 1;
+  left: 0;
+  width: 100%;
+}
+
+
+/* ********************* CALENDAR_SECTION ********************* */
 #backdrop {
   position: fixed;
   width: 100vw;
@@ -220,10 +290,10 @@ table{
   /*border: 2px solid yellow;*/	
 }
 td{
-  font-size: 2.2rem;	
+  font-size: 2.0rem;	
   font-weight: bold;
   text-align: center;
-  text-shadow: -2px 0 #092834, 0 2px #092834, 2px 0 #092834, 0 -2px #092834;
+  text-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834, 0 0 8px #092834;
   padding: .8rem;	
   border:  1px solid #347B98; 
   border-radius: 1rem;
@@ -246,7 +316,7 @@ th{
   padding: 1rem;	
   /*border:  2px solid blue; */
   border-radius: 1rem;
-  text-shadow: -2px 0 #092834, 0 2px #092834, 2px 0 #092834, 0 -2px #092834;
+  text-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834, 0 0 8px #092834;
   cursor: default;
 }
 .dayNames{
@@ -297,6 +367,48 @@ th{
 html{
   font-size: 74%;	
 }
+
+header{
+ width: 100vw;	
+ 
+}
+.hamburger{
+  display: block;	
+}
+
+.hamburger.close .hamburger_line:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.close .hamburger_line:nth-child(2){
+  opacity: 0;
+}
+
+.hamburger.close .hamburger_line:nth-child(3){
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+header nav{
+ display: flex;  
+ flex-direction: column; 
+ justify-content: flex-start;
+ align-items: center;
+ position: relative;
+ left: -40%;
+ height: 100%;
+ width: 40%;
+ transition: .4s ease-out;
+ font-size: inherit;
+}
+
+header nav a:first-of-type{
+  margin-top: 2rem;	 
+} 
+
+
+
+
 .modal{
   width: 74%;	
 }
@@ -314,6 +426,15 @@ html{
 } /* end of @media400 */
 
 
+/*
+@media only screen and (orientation: landscape) and (max-width: 680px) {
+html{
+  font-size: 50%;	
+}
+.modal{
+  width: 52%;	
+}
+} /* end of @mediaORIENTATION */
 
 
 
