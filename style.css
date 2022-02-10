@@ -12,12 +12,12 @@ html{
   scroll-behavior: smooth; 
 }
 body{
-  background-color: lightblue;	
+  background-color: cornsilk;	
 
 }  
 /* ********************* HEADER ********************* */
 header{
- max-width: 1100px;	
+ max-width: 1200px;	
  height: 100vh;
  margin: 0 auto;
  /*background-color: gold;*/ 
@@ -49,14 +49,14 @@ header{
 header nav{
   display: flex;	
   justify-content: center;
-  font-size: .66rem;
+  font-size: 1rem;
   /*background-color: #092834;	*/
   background-color: rgba(4, 17, 22, .2);
 }
 header nav a{
   position: relative;  	
   margin: 0 2%;	
-  padding: .6rem .2%;
+  padding: .64rem .2%;
   letter-spacing: 2px;
   font-weight: 400;  
   text-decoration: none;
@@ -81,11 +81,176 @@ header nav a:hover::before {
   width: 100%;
 }
 
+.face_frame{
+  position: absolute;	
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,0);  
+  /*width: 25rem;
+  height: 14rem;*/
+  padding: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: .2rem;
+  text-align: center;
+ /* background-color: sienna; */
+  color: #F7E0D4; 
+  border-radius: 1rem;
+  text-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834;
+  box-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834;
+  backdrop-filter: blur(18px);  
+  
+}
+.face_frame p{
+  padding-top: 1rem;	
+  text-align: right;  
+  color: #FC600A;  
+  text-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834;
+}
+/* ********************* INTRODUCTION_SECTION ********************* */
+.introduction_section{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10% 0;
+  letter-spacing: .1rem;
+  line-height: 1.8rem;
+  background-color: #F7E0D4;
+  color: #092834;  
+}
+.introduction_content{
+  display: flex;
+  justify-content: space-between;  
+  width: 80%;
+  margin: 0 auto;
+  /*border: 2px solid blue;*/ 
+}
+.introduction_text{
+  width: 60%;	
+}
+.introduction_text h2{
+  text-align: left;
+  margin-bottom: 2rem;  
+}
+
+.introduction_picture{
+  width: 34%;
+  align-self: center;
+}
+
+.introduction_picture  img {
+  width: 68%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 4px  #092834, 0 0 8px  #092834;
+}
+
+/* ********************* YOGA_SECTION ********************* */
+.yoga_section{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10% 0;
+  letter-spacing: .1rem;
+  line-height: 1.8rem;
+  background-color: #347B98;
+  color: #F7E0D4;
+}
+
+.yoga_content{
+  display: flex;	
+  width: 80%;
+  margin: 0 auto;
+ /* border: 2px solid orange;*/ 
+}
+
+.yoga_picture{
+  width: 40%;
+  align-self: center;
+}
+
+.yoga_picture  img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8% 38%;
+  box-shadow: 0 0 4px  #092834, 0 0 8px  #092834, 0 0 14px  #092834;
+}
+.yoga_text{
+  width: 60%;	
+}
+.yoga_text h2{
+  text-align: center;
+  margin-bottom: 2rem; 
+}
+
+/* ********************* EXCURSION_SECTION ********************* */
+.excursion_section{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10% 0;
+  letter-spacing: .1rem;
+  line-height: 1.8rem;
+  background-color: #F7E0D4;
+  color: #092834;
+}
+.excursion_section h2{
+  margin-bottom: 2rem;	
+  text-align: center;
+  font-size: 2rem;  
+  
+	
+}
+.excursion_content{
+  display: flex;
+  justify-content: center;  
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  /*border: 2px solid orange;*/   
+}
+
+.excursion_1, .excursion_2, .excursion_3, .excursion_4, .excursion_5, .excursion_6{
+  padding: 1.4rem;
+}
+.excursion_content_frame{
+  background-color: white; 	
+  box-shadow: 0 0 6px  #032C26, 0 0 8px  #032C26;
+  /*border: 2px solid royalblue; */	
+}
+.excursion_picture {
+  overflow: hidden;	
+
+}
+
+.excursion_picture img{
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  transition: .4s;  
+}
+
+.excursion_picture img:hover{
+ transform: scale(1.04);	
+}
+
+.excursion_text{
+  padding: .8rem; 	
+}
+
+.excursion_text h3{
+  font-size: 1.1rem; 		
+}
+.excursion_text p{
+  font-size: .9rem; 		
+}
+
+
+
 
 /* ********************* CALENDAR_SECTION ********************* */
 #backdrop {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
@@ -193,14 +358,14 @@ textarea:focus{
  color: #F7E0D4;
 }
 .calendar_frame{
-  width: 100vw;
+  max-width: 1200px;
   height: 100vh; 
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 0;
-  padding: 0; 
-  background-color: lightblue;  
+  margin: 0 auto;
+
+  background-color: yellow;  
 	
 }
 
@@ -219,9 +384,9 @@ textarea:focus{
   display: flex;
   flex-direction: column; 
   align-items: center;  
-  width: 100vw;
-  height: 100rem; 
-  margin: 0;
+  max-width: 1200px;
+  /*height: 100rem;*/
+  margin: 0 auto;
   padding: 0;  
   background-color: #092834;	
 }
@@ -350,7 +515,6 @@ th{
 }
 
 .today{
-  /*background-color: yellow;*/
   font-size: 2.2rem;
   font-weight: bold;
   text-decoration: underline;
@@ -362,32 +526,71 @@ th{
 }
 
 /* ****** RESPONSIVE ****** */
+@media only screen and (max-width: 992px) {
+html{
+  font-size: 80%;		  
+}	
+.excursion_1, .excursion_2, .excursion_3, .excursion_4{
+  /*width: 25%;	*/
+}
+
+} /* end of @media922 */
+
+@media screen and (max-width: 768px){
+html{
+  font-size: 74%;		  
+}
+.excursion_1, .excursion_2, .excursion_3, .excursion_4, .excursion_5, .excursion_6{
+  /*width: 33%;	*/
+}	
+} /* end of @media768 */
+
+
 
 @media screen and (max-width: 600px){
 html{
   font-size: 74%;	
 }
-
 header{
  width: 100vw;	
- 
 }
+
 .hamburger{
   display: block;	
 }
-
 .hamburger.close .hamburger_line:nth-child(1){
   transform: translateY(8px) rotate(45deg);
 }
-
 .hamburger.close .hamburger_line:nth-child(2){
   opacity: 0;
 }
-
 .hamburger.close .hamburger_line:nth-child(3){
   transform: translateY(-8px) rotate(-45deg);
 }
 
+.introduction_content{
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+.introduction_text{
+  width: 90%;
+  padding-top: 2rem;  
+}
+.yoga_content{
+  flex-direction: column; 
+  justify-content: center;
+}
+.yoga_picture{
+  padding-bottom: 2rem; 	
+}
+
+.yoga_text{
+  width: 90%;	
+  padding-top: 2rem; 
+}
+.excursion_1, .excursion_2, .excursion_3, .excursion_4, .excursion_5, .excursion_6{
+  /*width: 50%;	*/
+}	
 
 header nav{
  display: flex;  
@@ -395,9 +598,9 @@ header nav{
  justify-content: flex-start;
  align-items: center;
  position: relative;
- left: -40%;
+ left: -54%;
  height: 100%;
- width: 40%;
+ width: 54%;
  transition: .4s ease-out;
  font-size: inherit;
 }
@@ -405,9 +608,6 @@ header nav{
 header nav a:first-of-type{
   margin-top: 2rem;	 
 } 
-
-
-
 
 .modal{
   width: 74%;	
@@ -417,19 +617,26 @@ header nav a:first-of-type{
 
 @media screen and (max-width: 400px){
 html{
-  font-size: 60%;	
+  font-size: 55%;	
 }
 .modal{
   width: 80%;	
+}
+.excursion_content{
+  justify-content: center;	
 }	
-		
+.excursion_1, .excursion_2, .excursion_3, .excursion_4, .excursion_5, .excursion_6{
+ /*width: 78%;*/	
+}
+
+			
 } /* end of @media400 */
 
 
 /*
-@media only screen and (orientation: landscape) and (max-width: 680px) {
+@media only screen and (max-width: 800px) and (orientation: landscape) {
 html{
-  font-size: 50%;	
+  font-size: 45%;	
 }
 .modal{
   width: 52%;	

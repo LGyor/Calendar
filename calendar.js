@@ -2,18 +2,15 @@
 /********************* HAMBURGER MENU ******************** */
 let hamburger = document.getElementsByClassName("hamburger");
 
- 
 hamburger[0].addEventListener("click", () =>{
-	/*alert("Hamburger");*/
  if (document.getElementsByTagName("nav")[0].style.left === "0px"){
 	 
-	 document.getElementsByTagName("nav")[0].style.left = "-40%";	
+	 document.getElementsByTagName("nav")[0].style.left = "-54%";	
 	 hamburger[0].classList.toggle("close");
  }else{
 	 document.getElementsByTagName("nav")[0].style.left = "0px";
-     hamburger[0].classList.toggle("close");	 
+    hamburger[0].classList.toggle("close");	 
  }	
-	
 });
 
 /********************* CALENDAR ******************** */
