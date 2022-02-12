@@ -13,6 +13,30 @@ hamburger[0].addEventListener("click", () =>{
  }	
 });
 
+/******************* PICTURE ZOOM ****************** */
+let excursion_modal = document.getElementById("excursion_add_modal");
+function zoom(id){
+	let modalImg = document.getElementById("modal_img");
+	/*alert(id.src);*/
+  backdrop.classList.add("visible");	
+  excursion_modal.classList.add("visible");
+  modalImg.src = id.src;  
+};
+/********************* USER_CHANGE ******************** */
+function login_handler(){
+  let loginName = document.getElementById("login_name"); 
+  let calendarBackground = document.getElementsByClassName("calendar_frame");
+  if (loginName.value==="Vendég"){
+     calendarBackground[0].style.backgroundColor = "#092834"; 
+  } else{
+     calendarBackground[0].style.backgroundColor = "#347B98";	 	  
+  }
+}
+
+	 
+
+
+
 /********************* CALENDAR ******************** */
 let monthsOfName = ["Január", "Február", "Március", "Április", "Május", "Június", "Július",
  "Augusztus", "Szeptember", "Október", "November", "December"];
@@ -187,6 +211,28 @@ function findReservedDay(id){
 
 
 function showModalWindow (id){
+  let loginName = document.getElementById("login_name"); 
+
+  if (loginName.value==="Vendég"){
+	 showGuestWindow(id); 
+  } else{
+    showOwnerWindow(id); 	  
+  }
+
+};//showModalWindow
+
+let modalGuest = document.getElementById("modal_guest_id");	
+function showGuestWindow(id){
+  let dateOfTraining = new Date(year, month, +id.innerHTML); 
+  weekOfDay = dateOfTraining.getDay();
+  const modalGuestHeader = document.getElementById("modal_guest_header"); 
+  modalGuestHeader.innerHTML = year+" "+monthsOfName[month]+" "+id.innerHTML+"."+" "+daysOfName[weekOfDay]+" --- "+id.id;
+  backdrop.classList.add("visible");
+  modalGuest.classList.add("visible");
+  
+};//showGuestWindow
+
+function showOwnerWindow(id){
   let dateOfTraining = new Date(year, month, +id.innerHTML); 
   weekOfDay = dateOfTraining.getDay();
   const modal_header = document.getElementById("modal_header");   
@@ -232,13 +278,14 @@ function showModalWindow (id){
   newTrainig.day = +collectTraining[ReservedDay[1]].day;  
   newTrainig.weekOfDay = +collectTraining[ReservedDay[1]].weekOfDay; 
   newTrainig.arrCounter = ReservedDay[1];
- } 
-
-};//showModalWindow
+ }	
+};//showOwnerWindow
 
 const closeMovieModal = () =>{
   backdrop.classList.remove("visible");	
   addModal.classList.remove("visible"); 
+  excursion_modal.classList.remove("visible");	
+  modalGuest.classList.remove("visible");
 
 };//closeMovieModal
 const removeData = ()=>{

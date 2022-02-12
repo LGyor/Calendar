@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="style.css" rel="stylesheet"/>
   <script src="calendar.js" defer></script>  
+  <script src="https://kit.fontawesome.com/e41c3d2ad3.js" crossorigin="anonymous"></script>
 </head>
 
 
@@ -22,14 +23,12 @@
 	 <a href="#introduction">Bemutatkozás</a>
 	 <a href="#yoga">A jóga</a>
 	 <a href="#excursion">Kirándulások</a> 
-	 <a href="#">Időpont foglalás</a>  
-	 <a href="#">Kapcsolat</a>  
+	 <a href="#calendar_scheduler">Időpont foglalás</a>  
+	 <a href="#contact">Kapcsolat</a>  
     <a href="#">Bejelentkezés</a>  	 
   </nav>
   <div class="face_frame">
-    <q>Az élet olyan, mint a biciklizés. Ha meg akarod tartani az egyensúlyt,
-	 mozgásban kell maradnod.</q>
-	 <p>Albert Einstein</p>
+	 <p>Nap<span>aum</span>jóga studió</p>
   </div>
 
 
@@ -113,7 +112,7 @@
      <div class="excursion_1">
 	    <div class="excursion_content_frame">
 			<div class="excursion_picture">
-			  <img src="health_640.jpg" alt="jpg" >
+			  <img id="picture_1" onclick="zoom(this)" src="health_640.jpg" alt="jpg" >
 			</div>	 
 			<div class="excursion_text">
 			  <h3>Esztergom</h3>
@@ -125,7 +124,7 @@
 	  <div class="excursion_2">
 	    <div class="excursion_content_frame">	  
 			<div class="excursion_picture">
-			  <img src="family_640.jpg" alt="jpg" >
+			  <img id="picture_2" onclick="zoom(this)" src="family_640.jpg" alt="jpg" >
 			</div>		  
 			<div class="excursion_text">
 			  <h3>Szentendre</h3>
@@ -137,7 +136,7 @@
 	  <div class="excursion_3">
 	    <div class="excursion_content_frame">	 	  
 			<div class="excursion_picture">
-			  <img src="body_640.jpg" alt="jpg" >
+			  <img id="picture_3" onclick="zoom(this)" src="body_640.jpg" alt="jpg" >
 			</div>		  
 			<div class="excursion_text">
 			  <h3>Nagymaros</h3>
@@ -149,7 +148,7 @@
 	  <div class="excursion_4">
 	    <div class="excursion_content_frame">		  
 			<div class="excursion_picture">
-			  <img src="Y_yoga.jpg" alt="jpg" >
+			  <img id="picture_4" onclick="zoom(this)" src="Y_yoga.jpg" alt="jpg" >
 			</div>		  
 			<div class="excursion_text">
 			  <h3>Kisoroszi</h3>
@@ -160,7 +159,7 @@
 	  <div class="excursion_5">
 	    <div class="excursion_content_frame">		  
 			<div class="excursion_picture">
-			  <img src="Y_yoga.jpg" alt="jpg" >
+			  <img id="picture_5" onclick="zoom(this)" src="Y_yoga.jpg" alt="jpg" >
 			</div>		  
 			<div class="excursion_text">
 			  <h3>Vác</h3>
@@ -171,7 +170,7 @@
 	  <div class="excursion_6">
 	    <div class="excursion_content_frame">		  
 			<div class="excursion_picture">
-			  <img src="Y_yoga.jpg" alt="jpg" >
+			  <img id="picture_6" onclick="zoom(this)" src="Y_yoga.jpg" alt="jpg" >
 			</div>		  
 			<div class="excursion_text">
 			  <h3>Visegrád</h3>
@@ -180,12 +179,15 @@
 		</div>			
 	  </div>
 
+  </div>
   
+  <div class="excursion_modal" id="excursion_add_modal">
+     <img id="modal_img">
   </div>
 
 </section><!-- excursion_section -->
 
-<section class="calendar_section">
+<section id="calendar_scheduler" class="calendar_section">
 	<div id="backdrop"></div>
 	<div class="modal" id="add-modal">
 	  <h2 id="modal_header"> </h2>
@@ -250,44 +252,53 @@
 	</div><!-- modal -->
 
 	<div class="calendar_frame">
-	  <div id="calendar"></div>
-	</div>
-
-	<div class = "trainings">
-	  <h2>Heti jóga időpontok</h2>
-	  <div class=training_dates>
-	  
-		   <div class="training_content">
-			   <div class="training_details">
-				  <p>Dátum: 2022 Január 28. Péntek</p>
-				  <p>Időpont: 16:30</p>
-				  <p>Helyszín: Fischer István u. 142 </p>
-				  <p>Létszám (max fő): 12</p>
-				  <p>Ez itt egy üzenet a jóga órához.</p>		  
-			   </div>
-			   <div class="training_btn">
-				 <button>Jelentkezés</button>
-			   </div>
-		   </div>
-
-		   <div class="training_content">
-			   <div class="training_details">
-				  <p>Dátum: 2022 Január 28. Péntek</p>
-				  <p>Időpont: 16:30</p>
-				  <p>Helyszín: Fischer István u. 142 </p>
-				  <p>Létszám (max fő): 12</p>
-				  <p>Ez itt egy üzenet a jóga órához.</p>		  
-			   </div>
-			   <div class="training_btn">
-				 <button>Jelentkezés</button>
-			   </div>
-		   </div>	   
-		   
-		   
+	  <h2>Időpont foglalás</h2>
+	  <div class="calendar_login" >
+			<select id="login_name" onchange="login_handler()"  name="log_name" >
+			  <option>Vendég</option>	
+			  <option>Szilvi</option>	 
+			</select>  
 	  </div>
 
-
+	  <div id="calendar"></div>
 	</div>
+	
+	<div class="modal_guest" id="modal_guest_id">
+	  <div id="modal_guest_header">	
+	  Guest modal window H.	  
+	  </div>
+	  
+	  <div id="modal_guest_content">	
+	  Guest modal window C.	
+	  Guest modal window C.	
+	  Guest modal window C.	
+	  Guest modal window C.		  
+	  Guest modal window C.	  
+	  </div>	  
+	  
+	  <div id="modal_guest_footer">	
+	  Guest modal window F.	  
+	  </div>
+
+	</div><!-- modal_guest -->
+
 </section><!-- calendar_section -->
+
+<footer id="contact">
+	<h3>Elérhetőségek:</h3>
+	<h4>Napaumjóga studió</h4>		
+	<p><i class="fas fa-envelope"></i> 8888 Budapest, Napdüdvözlet u. 144. VIII/8.</p>
+	<p><i class="fas fa-mobile-alt"></i> +36 70 123 4567</p>
+	<p>Adószám: 123456789</p>	
+	<p>
+		<i class="fab fa-facebook">&ensp; &ensp;</i>
+		<i class="fab fa-twitter">&ensp; &ensp;</i>
+		<i class="fab fa-instagram">&ensp; &ensp;</i>
+		<i class="fab fa-youtube"></i>
+	</p>	
+	 
+ 
+</footer><!-- footer -->
+
 </body>
 </html>

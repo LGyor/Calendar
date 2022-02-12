@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
 *{
   box-sizing: border-box;
   margin: 0;
@@ -86,34 +87,36 @@ header nav a:hover::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%,0);  
-  /*width: 25rem;
-  height: 14rem;*/
   padding: 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  letter-spacing: .2rem;
-  text-align: center;
- /* background-color: sienna; */
-  color: #F7E0D4; 
   border-radius: 1rem;
-  text-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834;
-  box-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834;
+  box-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834, 0 0 10px #092834;
   backdrop-filter: blur(18px);  
+  font-family: 'Merienda One', cursive;
   
 }
 .face_frame p{
-  padding-top: 1rem;	
-  text-align: right;  
+  font-size: 3rem;	
+  font-weight: bold;
+  letter-spacing: .2rem;
+  text-align: center;	
+  color: #F7E0D4;    
+  text-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834;
+}
+.face_frame span{
+  font-size: 3rem;	
+  font-weight: bold;
+  letter-spacing: .2rem;
+  text-align: center;	
   color: #FC600A;  
   text-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834;
 }
+
 /* ********************* INTRODUCTION_SECTION ********************* */
 .introduction_section{
   max-width: 1200px;
   margin: 0 auto;
   padding: 10% 0;
   letter-spacing: .1rem;
-  line-height: 1.8rem;
   background-color: #F7E0D4;
   color: #092834;  
 }
@@ -130,6 +133,11 @@ header nav a:hover::before {
 .introduction_text h2{
   text-align: left;
   margin-bottom: 2rem;  
+  font-size: 2.1rem;
+}
+.introduction_text p{
+  font-size: 1.45rem;
+  line-height: 2.0rem;
 }
 
 .introduction_picture{
@@ -138,7 +146,7 @@ header nav a:hover::before {
 }
 
 .introduction_picture  img {
-  width: 68%;
+  width: 78%;
   height: auto;
   border-radius: 50%;
   box-shadow: 0 0 4px  #092834, 0 0 8px  #092834;
@@ -168,7 +176,7 @@ header nav a:hover::before {
 }
 
 .yoga_picture  img {
-  width: 50%;
+  width: 68%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -181,6 +189,11 @@ header nav a:hover::before {
 .yoga_text h2{
   text-align: center;
   margin-bottom: 2rem; 
+  font-size: 2.1rem;  
+}
+.yoga_text p{
+  font-size: 1.45rem;
+  line-height: 2.0rem;
 }
 
 /* ********************* EXCURSION_SECTION ********************* */
@@ -196,56 +209,106 @@ header nav a:hover::before {
 .excursion_section h2{
   margin-bottom: 2rem;	
   text-align: center;
-  font-size: 2rem;  
-  
-	
+  font-size: 2.1rem;  
 }
+
 .excursion_content{
-  display: flex;
-  justify-content: center;  
+  display: flex;	
+  justify-content: space-between;
   flex-wrap: wrap;
   width: 80%;
-  margin: 0 auto;
+  margin: 0rem auto 0 auto; 
   /*border: 2px solid orange;*/   
 }
-
 .excursion_1, .excursion_2, .excursion_3, .excursion_4, .excursion_5, .excursion_6{
-  padding: 1.4rem;
+  width: 30%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #0A3408;
+  box-shadow: 0 0 4px  #092834, 0 0 8px  #092834;
+  /*border: 1px solid green;*/
 }
-.excursion_content_frame{
-  background-color: white; 	
-  box-shadow: 0 0 6px  #032C26, 0 0 8px  #032C26;
-  /*border: 2px solid royalblue; */	
-}
-.excursion_picture {
-  overflow: hidden;	
 
+.excursion_picture {
+  height: 40vh;
+  overflow: hidden;
 }
 
 .excursion_picture img{
-  width: 20rem;
-  height: 20rem;
+  width: 100%;
+  height: 100%;  
   object-fit: cover;
-  transition: .4s;  
+  transition: 0.4s;  
 }
 
+.excursion_text {
+  padding-top: 1rem;	
+  padding-left: 1.4rem;   
+  padding-bottom: 1rem;  
+  background-color: cornsilk;
+
+}
 .excursion_picture img:hover{
- transform: scale(1.04);	
+  width: 104%;
+  height: 104%;  
 }
 
-.excursion_text{
-  padding: .8rem; 	
+.excursion_modal{
+  width: 80%;
+  max-width: 800px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: none;
+  animation-name: zoom;
+  animation-duration: 1.6s;
 }
 
-.excursion_text h3{
-  font-size: 1.1rem; 		
-}
-.excursion_text p{
-  font-size: .9rem; 		
+@keyframes zoom {
+  from {width: 0%;}
+  to {width: 80%;}
 }
 
 
 
+.excursion_modal.visible{
+  display: block;
+
+}
+
+#modal_img{
+  width: 100%;
+  height: 100%;  
+  object-fit: cover;	
+ 
+}
+
+/* ********************* FOOTER ********************* */
+footer{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2% 0.2rem 2%;
+  background-color: #F7E0D4;
+  color: #092834;  
+}
+
+footer h3{
+  font-size: 1.2rem;	
+  text-decoration-line: underline;
+  letter-spacing: 0.2rem;
+  padding-bottom: 1rem;
+}
+footer h4{
+  font-size: 1.16rem;	
+  letter-spacing: 0.2rem;
+  padding-bottom: 1rem;
+}
+footer p{
+  font-size: 1rem;	
+  padding-bottom: 0.8rem;
+}
 
 /* ********************* CALENDAR_SECTION ********************* */
 #backdrop {
@@ -255,7 +318,7 @@ header nav a:hover::before {
   top: 0;
   left: 0;
   /*background: rgba(51, 24, 0, 0.8);*/
-  background: rgba(10, 40, 52, 0.6); 
+  background: rgba(10, 40, 52, 0.9); 
   z-index: 10;
   pointer-events: none;
   display: none;
@@ -359,95 +422,50 @@ textarea:focus{
 }
 .calendar_frame{
   max-width: 1200px;
-  height: 100vh; 
+  /*height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: 0 auto;
+  padding: 4rem 0;
+  background-color: #092834; 
 
-  background-color: yellow;  
-	
+}
+.calendar_frame h2{
+  padding-bottom: 2rem;
+  font-size: 2.1rem;  
+  letter-spacing: 0.2rem;
+  text-align: center;
+  text-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834, 0 0 8px #092834;
+}
+.calendar_login{
+  width: 100%;
+  margin-bottom: 2rem;
+}
+#login_name{
+  width: auto;
+  height: 2.2rem;  
+  display: block;
+  margin: 0 auto;
+  font-size: 1.4rem;	
+  font-weight: bold;
+  background-color: #F7E0D4;
+  color: #092834; 
+  border: 2px solid #092834;
+  outline: none;
+
 }
 
 #calendar{
   max-width: 800px;
+  /*width: 90%;*/
   /*height: 200px;*/
   background-color: #347B98;
   margin: 0rem auto 0 auto;
   /*border: 2px solid blue;  */
-  box-shadow: 0 0 .2rem #092834, 0 0 .6rem #092834;
+  box-shadow: 0 0 2px #092834, 0 0 4px #F7E0D4, 0 0 8px #F7E0D4, 0 0 14px #F7E0D4;
   padding: 0 2rem 0 2rem;
   border-radius: 2rem;
-}
-
-.trainings{
-  display: flex;
-  flex-direction: column; 
-  align-items: center;  
-  max-width: 1200px;
-  /*height: 100rem;*/
-  margin: 0 auto;
-  padding: 0;  
-  background-color: #092834;	
-}
-.trainings h2{
-  margin-bottom: 4rem;	
-  padding-top: 4rem;	
-  font-size: 2rem;
-  text-align: center;  
-  color: #F7E0D4; 
-}
-
-.training_dates{
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  max-width: 800px;  
-  width: 80%;
-
-}	
-
-.training_content{
-  display: flex;
-  flex-direction: row; 		
-  margin-bottom: 3rem; 
-  border: 2px solid #F7E0D4;  
-  border-radius: .6rem;
-}
-.training_details {
-  width: 66%;
-}
-
-.training_details p{
-  font-size: 1.2rem;	
-  margin-left: 1.4rem; 
-  margin-bottom: 1.4rem;
-}
-
-.training_details p:first-of-type{
-  margin-top: 1.4rem; 
-}
-
-.training_btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 34%;
-  height: 100%;
-
-
-}
-.training_btn button{
-  width: 7.8rem;
-  height: 3rem;
-  background-color: #FC600A;
-  color: #F7E0D4; 
-  font-size: 1rem;
-  font-weight: bold;
-  letter-spacing: .1rem;
-  border: none;
-  border-radius: .4rem;
-  
 }
 
 table{
@@ -455,11 +473,11 @@ table{
   /*border: 2px solid yellow;*/	
 }
 td{
-  font-size: 2.0rem;	
+  font-size: 1.6rem;	
   font-weight: bold;
   text-align: center;
   text-shadow: 0 0 2px #092834, 0 0 4px #092834, 0 0 6px #092834, 0 0 8px #092834;
-  padding: .8rem;	
+  padding: .4rem;	
   border:  1px solid #347B98; 
   border-radius: 1rem;
   cursor: default;
@@ -477,7 +495,7 @@ td:hover{
 
 th{
   width: 4rem;
-  font-size: 1.6rem;	
+  font-size: 1.4rem;	
   padding: 1rem;	
   /*border:  2px solid blue; */
   border-radius: 1rem;
@@ -515,7 +533,7 @@ th{
 }
 
 .today{
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   text-decoration: underline;
   color: #092834;  
@@ -525,13 +543,48 @@ th{
   background-color: #F7E0D4; 	
 }
 
+.modal_guest{
+  position: fixed;
+  max-width: 400px;
+  width: 55%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 2px #F7E0D4, 0 0 4px #F7E0D4,0 0 6px #F7E0D4;
+  z-index: 100;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: none;
+
+}
+.modal_guest.visible{
+  display: block;
+}
+
+#modal_guest_header, #modal_guest_footer{
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;  
+  padding: 0.6rem;	
+  background-color: #FC600A; 
+  color: #092834; 	
+}
+#modal_guest_content{
+  font-size: 1.2rem;	
+  padding: 0.6rem;	
+  background-color: #092834; 
+  color: #F7E0D4;	
+}
+
+
+
 /* ****** RESPONSIVE ****** */
 @media only screen and (max-width: 992px) {
 html{
   font-size: 80%;		  
 }	
-.excursion_1, .excursion_2, .excursion_3, .excursion_4{
-  /*width: 25%;	*/
+.excursion_1, .excursion_2, .excursion_3, .excursion_4, .excursion_5, .excursion_6{
+  width: 48%;
 }
 
 } /* end of @media922 */
@@ -540,9 +593,7 @@ html{
 html{
   font-size: 74%;		  
 }
-.excursion_1, .excursion_2, .excursion_3, .excursion_4, .excursion_5, .excursion_6{
-  /*width: 33%;	*/
-}	
+	
 } /* end of @media768 */
 
 
@@ -589,7 +640,7 @@ header{
   padding-top: 2rem; 
 }
 .excursion_1, .excursion_2, .excursion_3, .excursion_4, .excursion_5, .excursion_6{
-  /*width: 50%;	*/
+  width: 100%;
 }	
 
 header nav{
@@ -622,13 +673,6 @@ html{
 .modal{
   width: 80%;	
 }
-.excursion_content{
-  justify-content: center;	
-}	
-.excursion_1, .excursion_2, .excursion_3, .excursion_4, .excursion_5, .excursion_6{
- /*width: 78%;*/	
-}
-
 			
 } /* end of @media400 */
 
