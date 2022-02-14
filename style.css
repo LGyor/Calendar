@@ -34,7 +34,7 @@ header{
   position: absolute;
   right: 8%;
   top: 2%; 
-  padding: 4px;  
+  padding: 4px 6px;  
   background-color: rgba(4, 17, 22, .2);  
   border-radius: 4px;  
 }
@@ -50,7 +50,7 @@ header{
 header nav{
   display: flex;	
   justify-content: center;
-  font-size: 1rem;
+  font-size: 1.0rem;
   /*background-color: #092834;	*/
   background-color: rgba(4, 17, 22, .2);
 }
@@ -545,8 +545,8 @@ th{
 
 .modal_guest{
   position: fixed;
-  max-width: 400px;
-  width: 55%;
+  max-width: 480px;
+  width: 78%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -555,7 +555,6 @@ th{
   border-radius: 0.8rem;
   overflow: hidden;
   display: none;
-
 }
 .modal_guest.visible{
   display: block;
@@ -565,17 +564,47 @@ th{
   font-size: 1.4rem;
   font-weight: bold;
   text-align: center;  
-  padding: 0.6rem;	
+  padding: 1rem;	
   background-color: #FC600A; 
   color: #092834; 	
 }
+
+#modal_guest_footer{
+  text-align: right;  
+}
 #modal_guest_content{
-  font-size: 1.2rem;	
+  font-size: 1.1rem;
+  letter-spacing: 0.14rem;
+  line-height: 2;  
   padding: 0.6rem;	
+  padding-left: 1.4rem;
   background-color: #092834; 
-  color: #F7E0D4;	
+  color: #F7E0D4;
+}
+.btn_guest{
+  padding: .4rem 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  border-radius: .3rem;
+  font-weight: bold;
+  background-color: #092834; 
+  color: #FC600A; 	
+  text-decoration: none;
+  border: none;
 }
 
+.btn_guest:first-of-type{
+  margin-right: 1.4rem;  
+}
+.btn_guest:hover{
+  color: #F7E0D4;
+}
+
+.disable{
+  opacity: 0.6;
+  cursor: not-allowed;	
+}
+	
 
 
 /* ****** RESPONSIVE ****** */
@@ -653,7 +682,7 @@ header nav{
  height: 100%;
  width: 54%;
  transition: .4s ease-out;
- font-size: inherit;
+ font-size: 1.28rem;
 }
 
 header nav a:first-of-type{
