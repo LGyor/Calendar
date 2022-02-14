@@ -15,7 +15,32 @@ html{
 body{
   background-color: cornsilk;	
 
-}  
+} 
+
+.top_button_style{
+  width: 3.125rem;
+  height: 3.125rem;
+  text-align: center;
+  line-height: 3.125rem;  
+  position: fixed;
+  right: 1.4%;
+  bottom: 6%;
+  z-index: 1;
+  visibility: hidden;
+  background-color: rgba(255, 255, 255, 0); 
+  color: rgba(255, 255, 255, 0); 
+  font-size: 2rem;  
+}
+
+.showup{
+  visibility: visible;
+  background-color: #FC600A; 
+  color: #092834; 
+  border-radius: 50%;
+  opacity: 0.6; 
+  transition: background-color 2s ease, color 2s ease;
+}
+ 
 /* ********************* HEADER ********************* */
 header{
  max-width: 1200px;	
