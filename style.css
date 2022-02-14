@@ -17,7 +17,7 @@ body{
 
 } 
 
-.top_button_style{
+.jumptop_button_style{
   width: 3.125rem;
   height: 3.125rem;
   text-align: center;
@@ -29,7 +29,8 @@ body{
   visibility: hidden;
   background-color: rgba(255, 255, 255, 0); 
   color: rgba(255, 255, 255, 0); 
-  font-size: 2rem;  
+  font-size: 2rem; 
+  cursor: default;  
 }
 
 .showup{
